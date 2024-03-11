@@ -103,7 +103,7 @@ class FSCILTrainer(object):
 
                     self.model = replace_base_fc(train_set, testloader.dataset.transform, self.model, args, session)
 
-                    visualize(self.model, testloader, epoch, args, session)
+                    # visualize(self.model, testloader, epoch, args, session)
 
                     # test model with all seen class
                     tsl, tsa = test(self.model, testloader, epoch, args, session)
@@ -142,7 +142,7 @@ class FSCILTrainer(object):
 
                 self.model = replace_base_fc(train_set, testloader.dataset.transform, self.model, args, session)
 
-                visualize(self.model, testloader, epoch, args, session)
+                # visualize(self.model, testloader, epoch, args, session)
 
                 tsl, tsa = test(self.model, testloader, 0, args, session)
 

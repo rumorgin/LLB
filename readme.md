@@ -4,16 +4,19 @@ PyTorch implementation of Rethinking Few-Shot Class-Incremental Learning: A Lazy
 
 ## Abstract
 
-Few-shot class-incremental learning (FSCIL) is a step forward in the realm of incremental learning, catering to a more
-realistic context. In typical incremental learning scenarios, the initial session possesses ample data for effective
-training. However, subsequent sessions often lack sufficient data, leading the model to face simultaneously with the
-challenges of catastrophic forgetting in incremental learning and overfitting in few-shot learning. Existing methods
-employ complex methods to maintain a balance of plasticity and stability. In this study, we break this balance and
-design a lazy learning baseline (LLB) that is more biased towards stability: pre-training a feature extractor with
-initial session data and fine-tuning a cosine classifier. For new sessions, we skip further training, using class
-prototypes for classification. Experiments across CIFAR100, miniImageNet, and CUB200 benchmarks reveal our approach
-outperforms state-of-the-art methods. Furthermore, we analyzed the shortcomings of existing indicators according to the
-experimental results, and proposed a new indicator to describe the performance of the methods more accurately.
+Few-shot class-incremental learning is a step forward in the realm of incremental learning, catering to a more 
+realistic context. In typical incremental learning scenarios, the initial session possesses ample data for 
+effective training. However, subsequent sessions often lack sufficient data, leading the model to simultaneously 
+face the challenges of catastrophic forgetting in incremental learning and overfitting in few-shot learning. 
+Existing methods employ fine-tuning strategy on new session to carefully maintain a balance of plasticity 
+and stability. In this study, we challenge this balance and design a lazy learning baseline that is more biased 
+towards stability: pre-training a feature extractor with initial session data and fine-tuning a cosine classifier. 
+For new sessions, we forgo further training and instead use class prototypes for classification. Experiments 
+across CIFAR100, miniImageNet, and CUB200 benchmarks reveal our approach outperforms state-of-the-art methods. 
+Furthermore, detailed analysis experiments uncover a common challenge in existing few-shot class-incremental 
+learning: the low accuracy of new session classes. We provide insightful explanations for these challenges. 
+Finally, we introduce a new indicator, separate accuracy, designed to more accurately describe the performance 
+of methods in handling both old and new classes.
 
 ## Requirements
 
@@ -33,7 +36,7 @@ downloaded file under `data/` folder and unzip it:
     $ tar -xvf miniimagenet.tar 
     $ tar -xvzf CUB_200_2011.tgz
 
-We will release the pretrained models after accept.
+Our pretrained parameters can be found in `pretrain`
 
 ## Training scripts
 
@@ -69,5 +72,3 @@ Our project references the codes in the following repos.
 
 - [fscil](https://github.com/xyutao/fscil)
 - [DeepEMD](https://github.com/icoz69/DeepEMD)
-- [FEAT](https://github.com/Sha-Lab/FEAT)
-- [CEC](https://github.com/icoz69/CEC-CVPR2021)
