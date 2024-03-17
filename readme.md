@@ -36,7 +36,8 @@ downloaded file under `data/` folder and unzip it:
     $ tar -xvf miniimagenet.tar 
     $ tar -xvzf CUB_200_2011.tgz
 
-Our pretrained parameters can be found in `pretrain`
+Our pretrained parameters can be found at [Google Drive](https://drive.google.com/drive/folders/12c_alUWFYSBu1392V1sIrTJsI0YnQrWc?usp=drive_link),
+then copy these pretrained parameters in folder `pretrain`
 
 ## Training scripts
 
